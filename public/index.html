@@ -312,6 +312,25 @@
             background: rgba(46, 204, 113, 0.3);
         }
 
+        .playlist-btn {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #e0e0e0;
+            height: 30px;
+            padding: 0 10px;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .playlist-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
         .no-results {
             padding: 15px;
             text-align: center;
@@ -409,6 +428,279 @@
             margin: 2px 8px 6px;
         }
 
+        .page {
+            display: block;
+        }
+
+        .page.hidden {
+            display: none;
+        }
+
+        .qr-page {
+            max-width: 520px;
+            margin: 10px auto 0;
+            background: rgba(18, 18, 18, 0.9);
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+        }
+
+        .chat-page {
+            max-width: 720px;
+            margin: 10px auto 0;
+            background: rgba(18, 18, 18, 0.9);
+            border-radius: 16px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            height: 70vh;
+        }
+
+        .chat-tabs {
+            display: flex;
+            gap: 8px;
+        }
+
+        .chat-tab {
+            flex: 1;
+            border-radius: 10px;
+            padding: 8px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.06);
+            color: #e0e0e0;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .chat-tab.active {
+            background: rgba(0, 168, 255, 0.25);
+            border-color: rgba(0, 168, 255, 0.6);
+            color: #e6f6ff;
+        }
+
+        .chat-list {
+            flex: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .chat-message {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            padding: 8px 10px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .chat-meta {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .chat-text {
+            font-size: 13px;
+            color: #fff;
+            line-height: 1.4;
+        }
+
+        .chat-input-row {
+            display: flex;
+            gap: 8px;
+        }
+
+        .chat-name-row {
+            display: flex;
+            gap: 8px;
+        }
+
+        .chat-name-row input {
+            flex: 1;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(0, 0, 0, 0.3);
+            color: #fff;
+            padding: 10px 12px;
+            font-size: 12px;
+        }
+
+        .chat-name-row button {
+            border-radius: 10px;
+            padding: 10px 14px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.1);
+            color: #e0e0e0;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .chat-input-row input {
+            flex: 1;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(0, 0, 0, 0.3);
+            color: #fff;
+            padding: 10px 12px;
+            font-size: 12px;
+        }
+
+        .chat-input-row button {
+            border-radius: 10px;
+            padding: 10px 14px;
+            border: 1px solid rgba(0, 168, 255, 0.5);
+            background: rgba(0, 168, 255, 0.18);
+            color: #e6f6ff;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .qr-title {
+            font-family: 'Karla', sans-serif;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .sync-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .sync-label {
+            font-family: 'Karla', sans-serif;
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .sync-pill {
+            font-size: 11px;
+            padding: 4px 8px;
+            border-radius: 999px;
+            background: rgba(0, 168, 255, 0.18);
+            border: 1px solid rgba(0, 168, 255, 0.5);
+            color: #bde7ff;
+            white-space: nowrap;
+        }
+
+        .sync-actions {
+            display: flex;
+            gap: 8px;
+            margin: 12px 0;
+        }
+
+        .sync-btn {
+            flex: 1;
+            border-radius: 10px;
+            padding: 10px 12px;
+            border: 1px solid rgba(0, 168, 255, 0.5);
+            background: rgba(0, 168, 255, 0.18);
+            color: #e6f6ff;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .sync-btn:hover {
+            background: rgba(0, 168, 255, 0.32);
+        }
+
+        .sync-link input {
+            width: 100%;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(0, 0, 0, 0.25);
+            color: #fff;
+            padding: 10px 12px;
+            font-size: 12px;
+        }
+
+        .sync-qr {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 16px;
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: 12px;
+            min-height: 140px;
+            margin-top: 12px;
+        }
+
+        .sync-status {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 10px;
+        }
+
+        .qr-rooms {
+            margin-top: 18px;
+        }
+
+        .rooms-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .room-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 10px 12px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .room-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .room-id {
+            font-size: 12px;
+            color: #fff;
+            letter-spacing: 0.04em;
+        }
+
+        .room-members {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .room-join-btn {
+            border-radius: 10px;
+            padding: 8px 12px;
+            border: 1px solid rgba(0, 168, 255, 0.5);
+            background: rgba(0, 168, 255, 0.18);
+            color: #e6f6ff;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .room-join-btn:hover {
+            background: rgba(0, 168, 255, 0.32);
+        }
+
         .new-playlist {
             margin: 0 6px;
             height: 40px;
@@ -458,11 +750,32 @@
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.06);
             border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
         }
 
         .playlists .selected {
             background: rgba(0, 123, 255, 0.18);
             border-color: rgba(0, 123, 255, 0.5);
+        }
+
+        .playlist-delete {
+            background: transparent;
+            border: none;
+            color: #ffb3b3;
+            width: 22px;
+            height: 22px;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .playlist-delete:hover {
+            background: rgba(255, 0, 0, 0.15);
         }
 
         .categories-container {
@@ -611,6 +924,11 @@
             -webkit-backdrop-filter: blur(10px);
         }
 
+        body.hide-player #music-controls-container,
+        body.hide-player #player-content {
+            display: none;
+        }
+
         #music-controls {
             width: 100%;
             max-width: 95%;
@@ -709,6 +1027,11 @@
             height: 4px;
             background-color: rgba(255, 255, 255, 0.1);
             cursor: pointer;
+        }
+
+        .disabled-control {
+            opacity: 0.5;
+            pointer-events: none;
         }
 
         #progress-bar {
@@ -906,6 +1229,19 @@
         }
 
         .video-container iframe {
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .video-container:fullscreen {
+            width: 100%;
+            height: 100%;
+            aspect-ratio: auto;
+            background: #000;
+        }
+
+        .video-container:fullscreen #youtube-embed {
             width: 100%;
             height: 100%;
         }
@@ -1222,19 +1558,19 @@
             </div>
             <nav>
                 <ul class="menu">
-                    <li class="active">
+                    <li class="active" data-page="home">
                         <span class="nav-icon">
                             <i class="fas fa-home"></i>
                         </span>
                         <span class="nav-text">Home</span>
                     </li>
-                    <li>
+                    <li data-page="chats">
                         <span class="nav-icon">
                             <i class="fas fa-comments"></i>
                         </span>
                         <span class="nav-text">Chats</span>
                     </li>
-                    <li>
+                    <li data-page="qr">
                         <span class="nav-icon">
                             <i class="fas fa-qrcode"></i>
                         </span>
@@ -1248,104 +1584,142 @@
                 <i class="fas fa-plus"></i>
                 <span>New Playlist</span>
             </button>
-            <ul class="playlists" id="playlistList">
-                <li class="selected">PLAYLIST 1</li>
-                <li>PLAYLIST 2</li>
-                <li>PLAYLIST 3</li>
-                <li>PLAYLIST 4</li>
-                <li>PLAYLIST 5</li>
-            </ul>
+            <ul class="playlists" id="playlistList"></ul>
         </div>
         <div class="content">
-            <div class="search-bar">
-                <i class="fas fa-search"></i>
-                <input type="text" id="searchInput" placeholder="Search from YouTube" onkeyup="searchYouTube(event)">
-                <div class="search-dropdown" id="searchDropdown">
-                    <!-- Search results will appear here -->
+            <div class="page page-home" id="page-home">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search from YouTube" onkeyup="searchYouTube(event)">
+                    <div class="search-dropdown" id="searchDropdown">
+                        <!-- Search results will appear here -->
+                    </div>
+                </div>
+                <div class="content-original" id="content-original">
+                    <div class="categories-container">
+                        <div class="categories">
+                            <div class="category active">All</div>
+                            <div class="category">Music</div>
+                            <div class="category">Gaming</div>
+                            <div class="category">News</div>
+                            <div class="category">Technology</div>
+                            <div class="category">Sports</div>
+                            <div class="category">Movies</div>
+                            <div class="category">Travel</div>
+                            <div class="category">Food</div>
+                            <div class="category">Education</div>
+                            <div class="category">Fashion</div>
+                            <div class="category">Science</div>
+                        </div>
+                    </div>
+                    <div class="recent">
+                        <div>
+                            <h2>Recently Played</h2>
+                            <span class="see-more">See more</span>
+                        </div>
+                        <div class="recently-played">
+                            <div class="song-card" onclick="playVideo('dQw4w9WgXcQ', 'Never Gonna Give You Up', 'Rick Astley'); togglePlayerView()">
+                                <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="Song thumbnail"
+                                    class="song-thumbnail">
+                                <div class="song-info">
+                                    <h3 class="song-title">Never Gonna Give You Up</h3>
+                                    <p class="song-artist">Rick Astley</p>
+                                </div>
+                            </div>
+                            <div class="song-card" onclick="playVideo('9bZkp7q19f0', 'Gangnam Style', 'PSY'); togglePlayerView()">
+                                <img src="https://i.ytimg.com/vi/9bZkp7q19f0/hqdefault.jpg" alt="Song thumbnail"
+                                    class="song-thumbnail">
+                                <div class="song-info">
+                                    <h3 class="song-title">Gangnam Style</h3>
+                                    <p class="song-artist">PSY</p>
+                                </div>
+                            </div>
+                            <div class="song-card" onclick="playVideo('JGwWNGJdvx8', 'Shape of You', 'Ed Sheeran'); togglePlayerView()">
+                                <img src="https://i.ytimg.com/vi/JGwWNGJdvx8/hqdefault.jpg" alt="Song thumbnail"
+                                    class="song-thumbnail">
+                                <div class="song-info">
+                                    <h3 class="song-title">Shape of You</h3>
+                                    <p class="song-artist">Ed Sheeran</p>
+                                </div>
+                            </div>
+                            <div class="song-card"
+                                onclick="playVideo('kJQP7kiw5Fk', 'Despacito', 'Luis Fonsi ft. Daddy Yankee'); togglePlayerView()">
+                                <img src="https://i.ytimg.com/vi/kJQP7kiw5Fk/hqdefault.jpg" alt="Song thumbnail"
+                                    class="song-thumbnail">
+                                <div class="song-info">
+                                    <h3 class="song-title">Despacito</h3>
+                                    <p class="song-artist">Luis Fonsi ft. Daddy Yankee</p>
+                                </div>
+                            </div>
+                            <div class="song-card" onclick="playVideo('JFm7YDVlqnI', 'Blinding Lights', 'The Weeknd'); togglePlayerView()">
+                                <img src="https://i.ytimg.com/vi/JFm7YDVlqnI/hqdefault.jpg" alt="Song thumbnail"
+                                    class="song-thumbnail">
+                                <div class="song-info">
+                                    <h3 class="song-title">Blinding Lights</h3>
+                                    <p class="song-artist">The Weeknd</p>
+                                </div>
+                            </div>
+                            <div class="song-card"
+                                onclick="playVideo('RgKAFK5djSk', 'See You Again', 'Wiz Khalifa ft. Charlie Puth'); togglePlayerView()">
+                                <img src="https://i.ytimg.com/vi/RgKAFK5djSk/hqdefault.jpg" alt="Song thumbnail"
+                                    class="song-thumbnail">
+                                <div class="song-info">
+                                    <h3 class="song-title">See You Again</h3>
+                                    <p class="song-artist">Wiz Khalifa ft. Charlie Puth</p>
+                                </div>
+                            </div>
+                            <div class="song-card"
+                                onclick="playVideo('OPf0YbXqDm0', 'Uptown Funk', 'Mark Ronson ft. Bruno Mars'); togglePlayerView()">
+                                <img src="https://i.ytimg.com/vi/OPf0YbXqDm0/hqdefault.jpg" alt="Song thumbnail"
+                                    class="song-thumbnail">
+                                <div class="song-info">
+                                    <h3 class="song-title">Uptown Funk</h3>
+                                    <p class="song-artist">Mark Ronson ft. Bruno Mars</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="content-original" id="content-original">
-                <div class="categories-container">
-                    <div class="categories">
-                        <div class="category active">All</div>
-                        <div class="category">Music</div>
-                        <div class="category">Gaming</div>
-                        <div class="category">News</div>
-                        <div class="category">Technology</div>
-                        <div class="category">Sports</div>
-                        <div class="category">Movies</div>
-                        <div class="category">Travel</div>
-                        <div class="category">Food</div>
-                        <div class="category">Education</div>
-                        <div class="category">Fashion</div>
-                        <div class="category">Science</div>
+            <div class="page page-chats hidden" id="page-chats">
+                <div class="chat-page">
+                    <div class="qr-title">Chats</div>
+                    <div class="chat-tabs">
+                        <button class="chat-tab active" id="chat-tab-global">Global</button>
+                        <button class="chat-tab" id="chat-tab-room">Room</button>
+                    </div>
+                    <div class="chat-name-row">
+                        <input id="chat-name-input" type="text" placeholder="Display name">
+                        <button id="chat-name-save">Save name</button>
+                    </div>
+                    <div class="chat-list" id="chat-list"></div>
+                    <div class="chat-input-row">
+                        <input id="chat-input" type="text" placeholder="Type a message">
+                        <button id="chat-send-btn">Send</button>
                     </div>
                 </div>
-                <div class="recent">
-                    <div>
-                        <h2>Recently Played</h2>
-                        <span class="see-more">See more</span>
+            </div>
+            <div class="page page-qr hidden" id="page-qr">
+                <div class="qr-page">
+                    <div class="qr-title">QR Code</div>
+                    <div class="sync-row">
+                        <span class="sync-label">Room</span>
+                        <span class="sync-pill" id="sync-room-pill">Not connected</span>
                     </div>
-                    <div class="recently-played">
-                        <div class="song-card" onclick="playVideo('dQw4w9WgXcQ', 'Never Gonna Give You Up', 'Rick Astley'); togglePlayerView()">
-                            <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="Song thumbnail"
-                                class="song-thumbnail">
-                            <div class="song-info">
-                                <h3 class="song-title">Never Gonna Give You Up</h3>
-                                <p class="song-artist">Rick Astley</p>
-                            </div>
+                    <div class="sync-link">
+                        <input id="sync-link-input" type="text" readonly placeholder="Room link will appear here">
+                    </div>
+                    <div class="sync-actions">
+                        <button class="sync-btn" id="copy-link-btn">Copy link</button>
+                    </div>
+                    <div class="sync-qr" id="sync-qr"></div>
+                    <div class="sync-status" id="sync-status">Creating a link when you enter the site.</div>
+                    <div class="qr-rooms">
+                        <div class="sync-row">
+                            <span class="sync-label">Available Rooms</span>
+                            <button class="sync-btn" id="refresh-rooms-btn">Refresh</button>
                         </div>
-                        <div class="song-card" onclick="playVideo('9bZkp7q19f0', 'Gangnam Style', 'PSY'); togglePlayerView()">
-                            <img src="https://i.ytimg.com/vi/9bZkp7q19f0/hqdefault.jpg" alt="Song thumbnail"
-                                class="song-thumbnail">
-                            <div class="song-info">
-                                <h3 class="song-title">Gangnam Style</h3>
-                                <p class="song-artist">PSY</p>
-                            </div>
-                        </div>
-                        <div class="song-card" onclick="playVideo('JGwWNGJdvx8', 'Shape of You', 'Ed Sheeran'); togglePlayerView()">
-                            <img src="https://i.ytimg.com/vi/JGwWNGJdvx8/hqdefault.jpg" alt="Song thumbnail"
-                                class="song-thumbnail">
-                            <div class="song-info">
-                                <h3 class="song-title">Shape of You</h3>
-                                <p class="song-artist">Ed Sheeran</p>
-                            </div>
-                        </div>
-                        <div class="song-card"
-                            onclick="playVideo('kJQP7kiw5Fk', 'Despacito', 'Luis Fonsi ft. Daddy Yankee'); togglePlayerView()">
-                            <img src="https://i.ytimg.com/vi/kJQP7kiw5Fk/hqdefault.jpg" alt="Song thumbnail"
-                                class="song-thumbnail">
-                            <div class="song-info">
-                                <h3 class="song-title">Despacito</h3>
-                                <p class="song-artist">Luis Fonsi ft. Daddy Yankee</p>
-                            </div>
-                        </div>
-                        <div class="song-card" onclick="playVideo('JFm7YDVlqnI', 'Blinding Lights', 'The Weeknd'); togglePlayerView()">
-                            <img src="https://i.ytimg.com/vi/JFm7YDVlqnI/hqdefault.jpg" alt="Song thumbnail"
-                                class="song-thumbnail">
-                            <div class="song-info">
-                                <h3 class="song-title">Blinding Lights</h3>
-                                <p class="song-artist">The Weeknd</p>
-                            </div>
-                        </div>
-                        <div class="song-card"
-                            onclick="playVideo('RgKAFK5djSk', 'See You Again', 'Wiz Khalifa ft. Charlie Puth'); togglePlayerView()">
-                            <img src="https://i.ytimg.com/vi/RgKAFK5djSk/hqdefault.jpg" alt="Song thumbnail"
-                                class="song-thumbnail">
-                            <div class="song-info">
-                                <h3 class="song-title">See You Again</h3>
-                                <p class="song-artist">Wiz Khalifa ft. Charlie Puth</p>
-                            </div>
-                        </div>
-                        <div class="song-card"
-                            onclick="playVideo('OPf0YbXqDm0', 'Uptown Funk', 'Mark Ronson ft. Bruno Mars'); togglePlayerView()">
-                            <img src="https://i.ytimg.com/vi/OPf0YbXqDm0/hqdefault.jpg" alt="Song thumbnail"
-                                class="song-thumbnail">
-                            <div class="song-info">
-                                <h3 class="song-title">Uptown Funk</h3>
-                                <p class="song-artist">Mark Ronson ft. Bruno Mars</p>
-                            </div>
-                        </div>
+                        <div class="rooms-list" id="rooms-list"></div>
                     </div>
                 </div>
             </div>
@@ -1419,6 +1793,8 @@
         </div>
     </div>
 
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script>
         let player = null;
         let currentVideoId = null;
@@ -1437,26 +1813,62 @@
         let searchResults = [];
         const RECENTLY_PLAYED_KEY = 'recentlyPlayed';
         const MAX_RECENTLY_PLAYED = 8;
+        const PLAYLISTS_KEY = 'playlists';
+        const PLAYLIST_SELECTED_KEY = 'selectedPlaylistIndex';
+        const YT_PLAYER_VARS = {
+            autoplay: 1,
+            controls: 0,
+            disablekb: 1,
+            fs: 0,
+            modestbranding: 1,
+            rel: 0,
+            showinfo: 0,
+            iv_load_policy: 3,
+            playsinline: 1
+        };
 
         // DOM Elements
         const playPauseBtn = document.getElementById('play-pause-btn');
         const prevBtn = document.getElementById('prev-btn');
         const nextBtn = document.getElementById('next-btn');
         const progressBar = document.getElementById('progress-bar');
+        const progressContainer = document.getElementById('progress-container');
         const repeatBtn = document.getElementById('repeat-btn');
         const shuffleBtn = document.getElementById('shuffle-btn');
         const muteBtn = document.getElementById('mute-btn');
         const volumeBar = document.getElementById('volume-bar');
         const volumeContainer = document.getElementById('volume-bar-container');
+        const fullscreenBtn = document.getElementById('fullscreen-btn');
         const minimizeBtn = document.getElementById('minimize-btn');
         const contentOriginal = document.getElementById('content-original');
         const playerContent = document.getElementById('player-content');
         const youtubeEmbed = document.getElementById('youtube-embed');
+        const videoContainer = document.querySelector('.video-container');
         const upNextList = document.getElementById('up-next-list');
         const searchInput = document.getElementById('searchInput');
         const recentlyPlayedContainer = document.querySelector('.recently-played');
         const categories = document.querySelectorAll('.category');
         const nowPlayingThumb = document.getElementById('now-playing-thumb');
+        const copyLinkBtn = document.getElementById('copy-link-btn');
+        const syncLinkInput = document.getElementById('sync-link-input');
+        const syncRoomPill = document.getElementById('sync-room-pill');
+        const syncStatus = document.getElementById('sync-status');
+        const syncQr = document.getElementById('sync-qr');
+        const refreshRoomsBtn = document.getElementById('refresh-rooms-btn');
+        const roomsList = document.getElementById('rooms-list');
+        const chatTabGlobal = document.getElementById('chat-tab-global');
+        const chatTabRoom = document.getElementById('chat-tab-room');
+        const chatList = document.getElementById('chat-list');
+        const chatInput = document.getElementById('chat-input');
+        const chatSendBtn = document.getElementById('chat-send-btn');
+        const chatNameInput = document.getElementById('chat-name-input');
+        const chatNameSaveBtn = document.getElementById('chat-name-save');
+        const menuItems = document.querySelectorAll('.menu li');
+        const pages = {
+            home: document.getElementById('page-home'),
+            chats: document.getElementById('page-chats'),
+            qr: document.getElementById('page-qr')
+        };
 
         const defaultRecentlyPlayed = [
             { id: "dQw4w9WgXcQ", title: "Never Gonna Give You Up", artist: "Rick Astley" },
@@ -1468,12 +1880,32 @@
             { id: "OPf0YbXqDm0", title: "Uptown Funk", artist: "Mark Ronson ft. Bruno Mars" }
         ];
 
+        let syncRoomId = null;
+        let syncSocket = null;
+        let isHost = false;
+        let suppressSyncEmit = false;
+        let pendingSeekTime = null;
+        let qrCodeInstance = null;
+        let syncTickInterval = null;
+        let isYouTubeReady = false;
+        let pendingSync = null;
+        let lastSyncSeekAt = 0;
+        let lastSyncedTime = null;
+        let chatScope = 'global';
+        const chatCache = {
+            global: [],
+            room: []
+        };
+        let chatDisplayName = 'Anonymous user';
+
         function onYouTubeIframeAPIReady() {
+            isYouTubeReady = true;
             player = new YT.Player('youtube-embed', {
                 events: {
                     'onReady': onPlayerReady,
                     'onStateChange': onPlayerStateChange
-                }
+                },
+                playerVars: YT_PLAYER_VARS
             });
         }
 
@@ -1482,14 +1914,44 @@
             // Set initial volume
             event.target.setVolume(currentVolume);
 
+            if (pendingSync) {
+                const { videoId, title, artist, time, shouldPlay } = pendingSync;
+                currentVideoId = videoId;
+                currentVideoTitle = decodeHtmlEntities(title || '');
+                currentVideoArtist = decodeHtmlEntities(artist || '');
+                updatePlayerInfo({ id: videoId, title, artist });
+                event.target.loadVideoById(videoId);
+                if (typeof time === 'number') {
+                    event.target.seekTo(time, true);
+                }
+                if (shouldPlay) {
+                    if (!isHost) {
+                        event.target.mute();
+                    }
+                    event.target.playVideo();
+                }
+                pendingSync = null;
+            }
+
             // If we were playing before showing, start playback
             if (isPlaying) {
+                if (!isHost) {
+                    event.target.mute();
+                }
                 event.target.playVideo();
+            }
+
+            if (pendingSeekTime !== null) {
+                event.target.seekTo(pendingSeekTime, true);
+                pendingSeekTime = null;
             }
         }
 
         function onPlayerStateChange(event) {
             if (event.data === YT.PlayerState.ENDED) {
+                if (!isHost) {
+                    return;
+                }
                 if (isRepeat) {
                     player.playVideo();
                 } else {
@@ -1499,10 +1961,12 @@
                 isPlaying = true;
                 playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
                 startProgressTimer();
+                emitSyncState();
             } else if (event.data === YT.PlayerState.PAUSED) {
                 isPlaying = false;
                 playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
                 clearInterval(progressInterval);
+                emitSyncState();
             }
         }
 
@@ -1518,8 +1982,12 @@
         document.addEventListener('DOMContentLoaded', () => {
             loadYouTubeAPI();
             loadRecentlyPlayed();
+            loadPlaylists();
             setupEventListeners();
             volumeBar.style.width = currentVolume + '%';
+            setupSync();
+            setupNavigation();
+            setupChat();
 
             const sidebar = document.querySelector('.sidebar');
             const sidebarCollapsed = localStorage.getItem('sidebarCollapsed') === 'true';
@@ -1527,6 +1995,562 @@
                 sidebar.classList.add('collapsed');
             }
         });
+
+        function setupChat() {
+            if (!chatTabGlobal || !chatTabRoom || !chatList || !chatInput || !chatSendBtn) {
+                return;
+            }
+
+            loadChatIdentity();
+
+            chatTabGlobal.addEventListener('click', () => switchChatScope('global'));
+            chatTabRoom.addEventListener('click', () => switchChatScope('room'));
+            chatSendBtn.addEventListener('click', sendChatMessage);
+            chatInput.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter') {
+                    sendChatMessage();
+                }
+            });
+
+            if (chatNameSaveBtn && chatNameInput) {
+                chatNameSaveBtn.addEventListener('click', saveChatName);
+                chatNameInput.addEventListener('keydown', (event) => {
+                    if (event.key === 'Enter') {
+                        saveChatName();
+                    }
+                });
+            }
+
+            renderChatMessages();
+        }
+
+        async function loadChatIdentity() {
+            chatDisplayName = 'Anonymous user';
+
+            try {
+                const response = await fetch('/api/me', { credentials: 'include' });
+                if (response.ok) {
+                    const data = await response.json();
+                    const name = (data && (data.name || data.email)) ? String(data.name || data.email).trim() : '';
+                    if (name) {
+                        chatDisplayName = name;
+                        return;
+                    }
+                }
+            } catch (error) {
+                // Ignore and fall back
+            }
+
+            const storedName = (localStorage.getItem('chatDisplayName') || '').trim();
+            if (storedName) {
+                chatDisplayName = storedName;
+                if (chatNameInput) {
+                    chatNameInput.value = storedName;
+                }
+                return;
+            }
+
+            chatDisplayName = (getCookie('userEmail') || '').trim() || 'Anonymous user';
+            if (chatNameInput) {
+                chatNameInput.value = chatDisplayName === 'Anonymous user' ? '' : chatDisplayName;
+            }
+        }
+
+        function saveChatName() {
+            if (!chatNameInput) {
+                return;
+            }
+
+            const name = chatNameInput.value.trim().slice(0, 40);
+            if (!name) {
+                return;
+            }
+
+            chatDisplayName = name;
+            localStorage.setItem('chatDisplayName', chatDisplayName);
+            if (syncStatus && chatScope === 'room') {
+                updateSyncStatus('Chat name updated.');
+            }
+        }
+
+        function switchChatScope(scope) {
+            chatScope = scope === 'room' ? 'room' : 'global';
+            chatTabGlobal.classList.toggle('active', chatScope === 'global');
+            chatTabRoom.classList.toggle('active', chatScope === 'room');
+            renderChatMessages();
+        }
+
+        function renderChatMessages() {
+            if (!chatList) {
+                return;
+            }
+
+            const messages = chatScope === 'room' ? chatCache.room : chatCache.global;
+            chatList.innerHTML = '';
+            messages.forEach(message => {
+                const item = document.createElement('div');
+                item.className = 'chat-message';
+                const time = new Date(message.time || Date.now()).toLocaleTimeString();
+                const senderLabel = message.isHost ? `${message.sender} (Host)` : message.sender;
+                item.innerHTML = `
+                    <div class="chat-meta">${senderLabel} · ${time}</div>
+                    <div class="chat-text">${message.text}</div>
+                `;
+                chatList.appendChild(item);
+            });
+            chatList.scrollTop = chatList.scrollHeight;
+        }
+
+        function sendChatMessage() {
+            const text = chatInput.value.trim();
+            if (!text || !syncSocket || !syncSocket.connected) {
+                return;
+            }
+
+            const payload = {
+                scope: chatScope,
+                text,
+                sender: chatDisplayName,
+                isHost: !!isHost
+            };
+
+            syncSocket.emit('chat-message', payload);
+            chatInput.value = '';
+        }
+
+        function setupNavigation() {
+            menuItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const target = item.getAttribute('data-page') || 'home';
+                    menuItems.forEach(menuItem => menuItem.classList.remove('active'));
+                    item.classList.add('active');
+                    Object.keys(pages).forEach(key => {
+                        if (pages[key]) {
+                            pages[key].classList.toggle('hidden', key !== target);
+                        }
+                    });
+                    document.body.classList.toggle('hide-player', target !== 'home');
+                });
+            });
+        }
+
+        function updateControlAccess() {
+            const controls = [playPauseBtn, prevBtn, nextBtn, repeatBtn, shuffleBtn];
+            controls.forEach(control => {
+                if (!control) return;
+                control.disabled = !isHost;
+                control.classList.toggle('disabled-control', !isHost);
+            });
+
+            if (progressContainer) {
+                progressContainer.classList.toggle('disabled-control', !isHost);
+            }
+        }
+
+        function setupSync() {
+            if (!copyLinkBtn || !syncLinkInput) {
+                return;
+            }
+
+            copyLinkBtn.addEventListener('click', async () => {
+                if (!syncLinkInput.value) {
+                    return;
+                }
+
+                try {
+                    await navigator.clipboard.writeText(syncLinkInput.value);
+                    updateSyncStatus('Link copied to clipboard.');
+                } catch (error) {
+                    syncLinkInput.select();
+                    document.execCommand('copy');
+                    updateSyncStatus('Link copied to clipboard.');
+                }
+            });
+
+            const existingRoomId = getRoomIdFromUrl();
+            const roomId = existingRoomId || generateRoomId();
+            updateControlAccess();
+            connectToRoom(roomId);
+
+            if (refreshRoomsBtn) {
+                refreshRoomsBtn.addEventListener('click', loadRooms);
+            }
+            loadRooms();
+        }
+
+        function generateRoomId() {
+            return `${Math.random().toString(36).slice(2, 8)}${Date.now().toString(36).slice(-4)}`;
+        }
+
+        function getRoomIdFromUrl() {
+            const params = new URLSearchParams(window.location.search);
+            const roomId = params.get('room');
+            return roomId ? roomId.trim() : null;
+        }
+
+        function buildRoomUrl(roomId) {
+            const url = new URL(window.location.href);
+            url.searchParams.set('room', roomId);
+            return url.toString();
+        }
+
+        function updateSyncUi(roomId, link) {
+            if (syncRoomPill) {
+                syncRoomPill.textContent = roomId ? roomId : 'Not connected';
+            }
+            if (syncLinkInput) {
+                syncLinkInput.value = link || '';
+            }
+            renderQrCode(link);
+        }
+
+        function updateSyncStatus(message) {
+            if (syncStatus) {
+                syncStatus.textContent = message;
+            }
+        }
+
+        function renderQrCode(link) {
+            if (!syncQr) {
+                return;
+            }
+
+            syncQr.innerHTML = '';
+            qrCodeInstance = null;
+
+            if (!link) {
+                syncQr.textContent = 'QR ready after link is created.';
+                return;
+            }
+
+            qrCodeInstance = new QRCode(syncQr, {
+                text: link,
+                width: 120,
+                height: 120,
+                colorDark: '#e6f6ff',
+                colorLight: '#0f1418',
+                correctLevel: QRCode.CorrectLevel.M
+            });
+        }
+
+        function connectToRoom(roomId) {
+            if (!roomId) {
+                return;
+            }
+
+            syncRoomId = roomId;
+
+            const link = buildRoomUrl(roomId);
+            history.replaceState({}, '', link);
+            updateSyncUi(roomId, link);
+            updateSyncStatus('Connecting to sync room...');
+
+            if (syncSocket) {
+                syncSocket.disconnect();
+            }
+
+            if (typeof io !== 'function') {
+                updateSyncStatus('Socket connection failed.');
+                return;
+            }
+
+            syncSocket = io({
+                query: { roomId }
+            });
+
+            syncSocket.on('connect', () => {
+                updateSyncStatus('Connected. Invite your friends.');
+                syncSocket.emit('request-sync');
+            });
+
+            syncSocket.on('disconnect', () => {
+                updateSyncStatus('Disconnected from sync.');
+                isHost = false;
+                updateControlAccess();
+            });
+
+            syncSocket.on('role', (payload) => {
+                isHost = payload && payload.role === 'host';
+                updateControlAccess();
+                updateSyncStatus(isHost ? 'You are the host.' : 'Joined as guest. Add songs to queue.');
+                setupSyncTick();
+            });
+
+            syncSocket.on('sync-state', (state) => {
+                applySyncState(state);
+            });
+
+            syncSocket.on('request-sync', () => {
+                if (isHost) {
+                    emitSyncState();
+                }
+            });
+
+            syncSocket.on('previous-chats', (payload) => {
+                if (!payload || !payload.scope) {
+                    return;
+                }
+
+                if (payload.scope === 'global') {
+                    chatCache.global = Array.isArray(payload.messages) ? payload.messages : [];
+                }
+
+                if (payload.scope === 'room') {
+                    chatCache.room = Array.isArray(payload.messages) ? payload.messages : [];
+                }
+
+                renderChatMessages();
+            });
+
+            syncSocket.on('chat-message', (payload) => {
+                if (!payload || !payload.message) {
+                    return;
+                }
+
+                const message = payload.message;
+                if (payload.scope === 'global') {
+                    chatCache.global.push(message);
+                    if (chatCache.global.length > 200) {
+                        chatCache.global.shift();
+                    }
+                }
+
+                if (payload.scope === 'room') {
+                    chatCache.room.push(message);
+                    if (chatCache.room.length > 200) {
+                        chatCache.room.shift();
+                    }
+                }
+
+                renderChatMessages();
+            });
+        }
+
+        function emitSyncState() {
+            if (!syncSocket || !syncSocket.connected || suppressSyncEmit || !isHost) {
+                return;
+            }
+
+            const currentTime = player && player.getCurrentTime ? player.getCurrentTime() : 0;
+
+            syncSocket.emit('sync-state', {
+                playlist: currentPlaylist,
+                currentVideoId,
+                currentVideoIndex,
+                isPlaying,
+                currentTime,
+                isRepeat,
+                isShuffle
+            });
+        }
+
+        function setupSyncTick() {
+            if (syncTickInterval) {
+                clearInterval(syncTickInterval);
+                syncTickInterval = null;
+            }
+
+            if (!isHost) {
+                return;
+            }
+
+            syncTickInterval = setInterval(() => {
+                if (isPlaying && player && player.getCurrentTime) {
+                    emitSyncState();
+                }
+            }, 3000);
+        }
+
+        function emitQueueAdd(video) {
+            if (!syncSocket || !syncSocket.connected) {
+                return;
+            }
+
+            syncSocket.emit('queue-add', video);
+        }
+
+        async function loadRooms() {
+            if (!roomsList) {
+                return;
+            }
+
+            roomsList.innerHTML = '';
+            try {
+                const response = await fetch('/api/rooms');
+                if (!response.ok) {
+                    throw new Error('Failed to load rooms');
+                }
+                const rooms = await response.json();
+                renderRooms(Array.isArray(rooms) ? rooms : []);
+            } catch (error) {
+                roomsList.innerHTML = '<div class="sync-status">Unable to load rooms.</div>';
+            }
+        }
+
+        function renderRooms(rooms) {
+            if (!roomsList) {
+                return;
+            }
+
+            if (rooms.length === 0) {
+                roomsList.innerHTML = '<div class="sync-status">No active rooms yet.</div>';
+                return;
+            }
+
+            roomsList.innerHTML = '';
+            rooms.forEach(room => {
+                const item = document.createElement('div');
+                item.className = 'room-item';
+
+                const meta = document.createElement('div');
+                meta.className = 'room-meta';
+
+                const id = document.createElement('div');
+                id.className = 'room-id';
+                id.textContent = `Room: ${room.id}`;
+
+                const members = document.createElement('div');
+                members.className = 'room-members';
+                members.textContent = `${room.members || 0} listener(s)`;
+
+                meta.appendChild(id);
+                meta.appendChild(members);
+
+                const joinBtn = document.createElement('button');
+                joinBtn.className = 'room-join-btn';
+                if (room.id === syncRoomId) {
+                    joinBtn.textContent = 'Current';
+                    joinBtn.disabled = true;
+                    joinBtn.classList.add('disabled-control');
+                } else {
+                    joinBtn.textContent = 'Join';
+                    joinBtn.addEventListener('click', () => {
+                        connectToRoom(room.id);
+                    });
+                }
+
+                item.appendChild(meta);
+                item.appendChild(joinBtn);
+                roomsList.appendChild(item);
+            });
+        }
+
+        function applySyncState(state) {
+            if (!state || typeof state !== 'object') {
+                return;
+            }
+
+            let autoPlayVideo = null;
+            suppressSyncEmit = true;
+            try {
+                if (Array.isArray(state.playlist)) {
+                    currentPlaylist = state.playlist;
+                }
+
+                if (Number.isInteger(state.currentVideoIndex)) {
+                    currentVideoIndex = state.currentVideoIndex;
+                }
+
+                if (typeof state.isPlaying === 'boolean') {
+                    isPlaying = state.isPlaying;
+                }
+
+                if (typeof state.isRepeat === 'boolean') {
+                    isRepeat = state.isRepeat;
+                    if (repeatBtn) {
+                        repeatBtn.classList.toggle('active', isRepeat);
+                    }
+                }
+
+                if (typeof state.isShuffle === 'boolean') {
+                    isShuffle = state.isShuffle;
+                    if (shuffleBtn) {
+                        shuffleBtn.classList.toggle('active', isShuffle);
+                    }
+                }
+
+                if (isHost && !state.currentVideoId && state.playlist && state.playlist.length > 0) {
+                    autoPlayVideo = state.playlist[0];
+                }
+
+                if (state.currentVideoId) {
+                    const match = currentPlaylist.find(video => video.id === state.currentVideoId);
+                    const title = match ? match.title : currentVideoTitle;
+                    const artist = match ? match.artist : currentVideoArtist;
+
+                    if (!isYouTubeReady) {
+                        pendingSync = {
+                            videoId: state.currentVideoId,
+                            title,
+                            artist,
+                            time: typeof state.currentTime === 'number' ? state.currentTime : null,
+                            shouldPlay: !!state.isPlaying
+                        };
+                        currentVideoId = state.currentVideoId;
+                    } else {
+                        if (currentVideoId !== state.currentVideoId) {
+                            playVideo(state.currentVideoId, title || 'Unknown', artist || '', false, true);
+                        } else {
+                            updatePlayerInfo({ id: state.currentVideoId, title, artist });
+                        }
+                    }
+                }
+
+                populateUpNext();
+
+                if (typeof state.currentTime === 'number') {
+                    maybeSyncSeek(state.currentTime);
+                }
+
+                if (typeof state.isPlaying === 'boolean' && player) {
+                    if (state.isPlaying) {
+                        if (!isHost) {
+                            player.mute();
+                        }
+                        player.playVideo();
+                    } else {
+                        player.pauseVideo();
+                    }
+                }
+            } finally {
+                suppressSyncEmit = false;
+            }
+
+            if (autoPlayVideo && isHost) {
+                playVideo(autoPlayVideo.id, autoPlayVideo.title || 'Unknown', autoPlayVideo.artist || '', false);
+            }
+        }
+
+        function syncSeek(time) {
+            if (player && player.seekTo) {
+                player.seekTo(time, true);
+            } else {
+                pendingSeekTime = time;
+            }
+        }
+
+        function maybeSyncSeek(time) {
+            if (!player || !player.getCurrentTime) {
+                pendingSeekTime = time;
+                return;
+            }
+
+            const now = Date.now();
+            const current = player.getCurrentTime();
+            const delta = Math.abs(current - time);
+
+            if (lastSyncedTime !== null && Math.abs(lastSyncedTime - time) < 0.2 && now - lastSyncSeekAt < 1200) {
+                return;
+            }
+
+            if (delta < 1.25) {
+                return;
+            }
+
+            lastSyncedTime = time;
+            lastSyncSeekAt = now;
+            syncSeek(time);
+        }
 
         // Load recently played videos from storage or defaults
         function loadRecentlyPlayed() {
@@ -1544,6 +2568,99 @@
                 console.error('Error loading recently played:', error);
                 renderRecentlyPlayed(defaultRecentlyPlayed);
             }
+        }
+
+        function loadPlaylists() {
+            const playlists = getPlaylists();
+            renderPlaylists(playlists);
+        }
+
+        function getPlaylists() {
+            try {
+                const stored = localStorage.getItem(PLAYLISTS_KEY);
+                const playlists = stored ? JSON.parse(stored) : [];
+                return Array.isArray(playlists) ? playlists : [];
+            } catch (error) {
+                return [];
+            }
+        }
+
+        function savePlaylists(playlists) {
+            localStorage.setItem(PLAYLISTS_KEY, JSON.stringify(playlists));
+        }
+
+        function getSelectedPlaylistIndex() {
+            const selectedIndex = parseInt(localStorage.getItem(PLAYLIST_SELECTED_KEY), 10);
+            return Number.isNaN(selectedIndex) ? -1 : selectedIndex;
+        }
+
+        function renderPlaylists(playlists) {
+            const playlistList = document.getElementById('playlistList');
+            if (!playlistList) return;
+
+            playlistList.innerHTML = '';
+            const selectedIndex = getSelectedPlaylistIndex();
+
+            if (!Array.isArray(playlists) || playlists.length === 0) {
+                const empty = document.createElement('li');
+                empty.textContent = 'NO PLAYLISTS YET';
+                empty.style.opacity = '0.6';
+                playlistList.appendChild(empty);
+                return;
+            }
+
+            playlists.forEach((playlist, index) => {
+                const li = document.createElement('li');
+                const nameSpan = document.createElement('span');
+                nameSpan.textContent = String(playlist.name || `Playlist ${index + 1}`).toUpperCase();
+                li.appendChild(nameSpan);
+
+                const deleteBtn = document.createElement('button');
+                deleteBtn.className = 'playlist-delete';
+                deleteBtn.type = 'button';
+                deleteBtn.innerHTML = '<i class="fas fa-trash"></i>';
+                deleteBtn.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    deletePlaylist(index);
+                });
+                li.appendChild(deleteBtn);
+
+                if (index === selectedIndex || (isNaN(selectedIndex) && index === 0)) {
+                    li.classList.add('selected');
+                }
+                li.addEventListener('click', function () {
+                    document.querySelectorAll('#playlistList li').forEach(item => {
+                        item.classList.remove('selected');
+                    });
+                    this.classList.add('selected');
+                    localStorage.setItem(PLAYLIST_SELECTED_KEY, String(index));
+                });
+                playlistList.appendChild(li);
+            });
+        }
+
+        function deletePlaylist(index) {
+            const playlists = getPlaylists();
+            if (index < 0 || index >= playlists.length) {
+                return;
+            }
+
+            playlists.splice(index, 1);
+            savePlaylists(playlists);
+
+            let selectedIndex = getSelectedPlaylistIndex();
+            if (selectedIndex === index) {
+                selectedIndex = playlists.length ? Math.min(index, playlists.length - 1) : -1;
+                if (selectedIndex === -1) {
+                    localStorage.removeItem(PLAYLIST_SELECTED_KEY);
+                } else {
+                    localStorage.setItem(PLAYLIST_SELECTED_KEY, String(selectedIndex));
+                }
+            } else if (selectedIndex > index) {
+                localStorage.setItem(PLAYLIST_SELECTED_KEY, String(selectedIndex - 1));
+            }
+
+            renderPlaylists(playlists);
         }
 
         // Render recently played videos
@@ -1585,10 +2702,15 @@
             // Progress bar click
             document.getElementById('progress-container').addEventListener('click', handleProgressClick);
 
+            if (fullscreenBtn) {
+                fullscreenBtn.addEventListener('click', toggleFullscreen);
+            }
+
             // Repeat button
             repeatBtn.addEventListener('click', () => {
                 isRepeat = !isRepeat;
                 repeatBtn.classList.toggle('active');
+                emitSyncState();
             });
 
             // Shuffle button
@@ -1598,6 +2720,7 @@
                 if (isShuffle && currentPlaylist.length > 0) {
                     shufflePlaylist();
                 }
+                emitSyncState();
             });
 
             // Volume controls
@@ -1632,11 +2755,19 @@
             });
         }
 
-        async function playVideo(videoId, title, artist, addToQueue = true) {
+        async function playVideo(videoId, title, artist, addToQueue = true, fromSync = false) {
+            if (!isHost && !fromSync) {
+                addToQueueVideo(videoId, title, artist);
+                updateSyncStatus('Added to queue. Waiting for host to play.');
+                return;
+            }
+
             currentVideoId = videoId;
             currentVideoTitle = decodeHtmlEntities(title);
             currentVideoArtist = decodeHtmlEntities(artist);
-            addToRecentlyPlayed({ id: videoId, title, artist });
+            if (!fromSync) {
+                addToRecentlyPlayed({ id: videoId, title, artist });
+            }
 
             // Show the player if it's not already visible
             if (!playerContent.classList.contains('active')) {
@@ -1667,7 +2798,8 @@
                         events: {
                             'onReady': onPlayerReady,
                             'onStateChange': onPlayerStateChange
-                        }
+                        },
+                        playerVars: YT_PLAYER_VARS
                     });
                 } else {
                     player.loadVideoById(videoId);
@@ -1682,6 +2814,10 @@
             if (player && player.playVideo) {
                 player.playVideo();
                 startProgressTimer();
+            }
+
+            if (!fromSync) {
+                emitSyncState();
             }
         }
 
@@ -1726,6 +2862,9 @@
 
         // Toggle play/pause
         function togglePlayPause() {
+            if (!isHost) {
+                return;
+            }
             if (!currentVideoId) {
                 alert("Please select a video first");
                 return;
@@ -1739,6 +2878,7 @@
                 isPlaying = false;
                 playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
                 clearInterval(progressInterval);
+                emitSyncState();
             } else {
                 // Start playback
                 isPlaying = true;
@@ -1753,7 +2893,8 @@
                             events: {
                                 'onReady': onPlayerReady,
                                 'onStateChange': onPlayerStateChange
-                            }
+                            },
+                            playerVars: YT_PLAYER_VARS
                         });
                     }
                 } else {
@@ -1765,21 +2906,14 @@
                                 'onReady': onPlayerReady,
                                 'onStateChange': onPlayerStateChange
                             },
-                            playerVars: {
-                                autoplay: 1,
-                                controls: 0,
-                                disablekb: 1,
-                                fs: 0,
-                                modestbranding: 1,
-                                rel: 0,
-                                showinfo: 0
-                            }
+                            playerVars: YT_PLAYER_VARS
                         });
                     } else {
                         player.playVideo();
                     }
                 }
                 startProgressTimer();
+                emitSyncState();
             }
         }
 
@@ -1814,6 +2948,7 @@
 
         // Handle progress bar click
         function handleProgressClick(e) {
+            if (!isHost) return;
             if (!player) return;
 
             const percent = (e.offsetX / this.offsetWidth) * 100;
@@ -1829,9 +2964,12 @@
             if (isPlaying) {
                 startProgressTimer();
             }
+
+            emitSyncState();
         }
 
         function playPrevious() {
+            if (!isHost) return;
             if (currentPlaylist.length === 0) return;
 
             currentVideoIndex = (currentVideoIndex - 1 + currentPlaylist.length) % currentPlaylist.length;
@@ -1840,6 +2978,7 @@
         }
 
         function playNext() {
+            if (!isHost) return;
             if (currentPlaylist.length === 0) return;
 
             if (isShuffle) {
@@ -1948,9 +3087,7 @@
                             'onReady': onPlayerReady,
                             'onStateChange': onPlayerStateChange
                         },
-                        playerVars: {
-                            autoplay: 1 // Ensure autoplay when player opens
-                        }
+                        playerVars: YT_PLAYER_VARS
                     });
                 } else if (player && isPlaying) {
                     player.playVideo(); // Resume playback if player was paused
@@ -1961,6 +3098,25 @@
                 document.querySelector('.up-next-container').classList.add('hidden');
                 contentOriginal.classList.remove('hidden');
                 document.body.classList.remove('sidebar-hidden');
+            }
+        }
+
+        function toggleFullscreen() {
+            if (!videoContainer) {
+                return;
+            }
+
+            if (document.fullscreenElement) {
+                document.exitFullscreen();
+                return;
+            }
+
+            if (videoContainer.requestFullscreen) {
+                videoContainer.requestFullscreen();
+            } else if (videoContainer.webkitRequestFullscreen) {
+                videoContainer.webkitRequestFullscreen();
+            } else if (videoContainer.msRequestFullscreen) {
+                videoContainer.msRequestFullscreen();
             }
         }
 
@@ -2007,10 +3163,26 @@
                             updateQueueButtonState(queueBtn, nowQueued);
                         });
 
+                        const playlistBtn = document.createElement('button');
+                        playlistBtn.className = 'playlist-btn';
+                        playlistBtn.type = 'button';
+                        playlistBtn.textContent = 'Add to Playlist';
+                        playlistBtn.addEventListener('click', (event) => {
+                            event.stopPropagation();
+                            addVideoToSelectedPlaylist(video);
+                        });
+
+                        const actions = resultItem.querySelector('.search-result-actions');
+                        if (actions) {
+                            actions.appendChild(playlistBtn);
+                        }
+
                         resultItem.addEventListener('click', () => {
-                            addToQueue(video.id, video.title, video.channelTitle);
-                            playVideo(video.id, video.title, video.channelTitle, false);
-                            togglePlayerView(); // Open the player
+                            addToQueueVideo(video.id, video.title, video.channelTitle);
+                            if (isHost) {
+                                playVideo(video.id, video.title, video.channelTitle, false);
+                                togglePlayerView(); // Open the player
+                            }
                             dropdown.style.display = 'none';
                         });
 
@@ -2027,18 +3199,27 @@
         }
 
         // Function to add video to queue without playing immediately
-        function addToQueue(videoId, title, artist) {
+        function addToQueueVideo(videoId, title, artist) {
             // Check if video already exists in playlist
             const existingIndex = currentPlaylist.findIndex(v => v.id === videoId);
 
             if (existingIndex === -1) {
                 // Add new video to playlist
-                currentPlaylist.push({
+                const video = {
                     id: videoId,
                     title: decodeHtmlEntities(title),
                     artist: decodeHtmlEntities(artist)
-                });
+                };
+                currentPlaylist.push(video);
                 populateUpNext();
+                if (isHost) {
+                    emitSyncState();
+                    if (!currentVideoId) {
+                        playVideo(videoId, title, artist, false);
+                    }
+                } else {
+                    emitQueueAdd(video);
+                }
                 return true;
             } else {
                 alert('This video is already in the queue');
@@ -2049,12 +3230,18 @@
         function toggleQueue(videoId, title, artist) {
             const existingIndex = currentPlaylist.findIndex(v => v.id === videoId);
             if (existingIndex === -1) {
-                currentPlaylist.push({
+                const video = {
                     id: videoId,
                     title: decodeHtmlEntities(title),
                     artist: decodeHtmlEntities(artist)
-                });
+                };
+                currentPlaylist.push(video);
                 populateUpNext();
+                if (isHost) {
+                    emitSyncState();
+                } else {
+                    emitQueueAdd(video);
+                }
                 return true;
             }
 
@@ -2071,7 +3258,34 @@
             }
         }
 
+        function addVideoToSelectedPlaylist(video) {
+            const playlists = getPlaylists();
+            const selectedIndex = getSelectedPlaylistIndex();
+            if (selectedIndex < 0 || selectedIndex >= playlists.length) {
+                alert('Create and select a playlist first.');
+                return;
+            }
+
+            const playlist = playlists[selectedIndex];
+            if (!playlist.items) {
+                playlist.items = [];
+            }
+
+            const exists = playlist.items.some(item => item.id === video.id);
+            if (!exists) {
+                playlist.items.push({
+                    id: video.id,
+                    title: video.title,
+                    artist: video.channelTitle
+                });
+                savePlaylists(playlists);
+            }
+        }
+
         function removeFromQueue(index) {
+            if (!isHost) {
+                return;
+            }
             if (index < 0 || index >= currentPlaylist.length) return;
 
             const removingCurrent = index === currentVideoIndex;
@@ -2089,6 +3303,7 @@
                     player.stopVideo();
                 }
                 populateUpNext();
+                emitSyncState();
                 return;
             }
 
@@ -2103,6 +3318,7 @@
             }
 
             populateUpNext();
+            emitSyncState();
         }
 
         // Close dropdown when clicking outside
@@ -2134,12 +3350,19 @@
                 `;
 
                 const removeBtn = upNextItem.querySelector('.remove-queue-btn');
-                removeBtn.addEventListener('click', (event) => {
-                    event.stopPropagation();
-                    removeFromQueue(index);
-                });
+                if (isHost) {
+                    removeBtn.addEventListener('click', (event) => {
+                        event.stopPropagation();
+                        removeFromQueue(index);
+                    });
+                } else {
+                    removeBtn.style.display = 'none';
+                }
 
                 upNextItem.addEventListener('click', () => {
+                    if (!isHost) {
+                        return;
+                    }
                     currentVideoIndex = index;
                     playVideo(video.id, video.title, video.artist, false);
                 });
@@ -2212,16 +3435,17 @@
         function addPlaylist() {
             const playlistName = prompt('Enter playlist name:');
             if (playlistName) {
-                const playlistList = document.getElementById('playlistList');
-                const newItem = document.createElement('li');
-                newItem.textContent = playlistName.toUpperCase();
-                newItem.addEventListener('click', function () {
-                    document.querySelectorAll('#playlistList li').forEach(item => {
-                        item.classList.remove('selected');
-                    });
-                    this.classList.add('selected');
+                const trimmed = playlistName.trim();
+                if (!trimmed) return;
+
+                const playlists = getPlaylists();
+                playlists.push({
+                    name: trimmed,
+                    items: []
                 });
-                playlistList.appendChild(newItem);
+                savePlaylists(playlists);
+                localStorage.setItem(PLAYLIST_SELECTED_KEY, String(playlists.length - 1));
+                renderPlaylists(playlists);
             }
         }
 
