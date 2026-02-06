@@ -45,6 +45,20 @@ const rooms = {};
 const globalChat = [];
 const roomChats = {};
 
+function assignHost(roomId, newHostId) {
+    if (!rooms[roomId]) {
+        return;
+    }
+
+    rooms[roomId].hostId = newHostId || null;
+    if (newHostId) {
+        io.to(newHostId).emit('role', { role: 'host' });
+        io.to(roomId).emit('host-changed', { hostId: newHostId });
+    } else {
+        io.to(roomId).emit('host-changed', { hostId: null });
+    }
+}
+
 async function tryYouTubeAPI(requestFn) {
     for (const key of ACTIVE_API_KEYS) {
         try {
@@ -185,6 +199,7 @@ io.on('connection', (socket) => {
     const roomId = socket.handshake.query.roomId;
 
     if (!roomId) {
+        socket.disconnect(true);
         return;
     }
 
@@ -205,7 +220,10 @@ io.on('connection', (socket) => {
         };
     }
 
-        rooms[roomId].members.add(socket.id);
+    rooms[roomId].members.add(socket.id);
+    if (!rooms[roomId].hostId) {
+        rooms[roomId].hostId = socket.id;
+    }
 
     socket.join('global-chat');
 
@@ -315,10 +333,7 @@ io.on('connection', (socket) => {
         rooms[roomId].members.delete(socket.id);
         if (rooms[roomId].hostId === socket.id) {
             const nextHost = rooms[roomId].members.values().next().value;
-            rooms[roomId].hostId = nextHost || null;
-            if (nextHost) {
-                io.to(nextHost).emit('role', { role: 'host' });
-            }
+            assignHost(roomId, nextHost);
         }
 
         if (rooms[roomId].members.size === 0) {
