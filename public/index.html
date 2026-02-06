@@ -2233,6 +2233,17 @@
             });
         }
 
+        function getSocketBaseUrl() {
+            const meta = document.querySelector('meta[name="socket-url"]');
+            if (meta && meta.content && meta.content.trim()) {
+                return meta.content.trim();
+            }
+            if (typeof window !== 'undefined' && window.SOCKET_URL) {
+                return window.SOCKET_URL;
+            }
+            return undefined;
+        }
+
         function connectToRoom(roomId) {
             if (!roomId) {
                 return;
@@ -2254,8 +2265,10 @@
                 return;
             }
 
-            syncSocket = io({
-                query: { roomId }
+            const socketBaseUrl = getSocketBaseUrl();
+            syncSocket = io(socketBaseUrl, {
+                query: { roomId },
+                transports: ['websocket']
             });
 
             syncSocket.on('connect', () => {
