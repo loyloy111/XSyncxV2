@@ -251,6 +251,13 @@ io.on('connection', (socket) => {
         }
     });
 
+    socket.on('control-request', (payload) => {
+        if (!payload || !rooms[roomId]?.hostId) {
+            return;
+        }
+        io.to(rooms[roomId].hostId).emit('control-request', payload);
+    });
+
     socket.on('sync-state', (state) => {
         if (rooms[roomId]?.hostId !== socket.id) {
             return;

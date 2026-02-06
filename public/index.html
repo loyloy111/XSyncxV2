@@ -1920,7 +1920,13 @@
                 currentVideoTitle = decodeHtmlEntities(title || '');
                 currentVideoArtist = decodeHtmlEntities(artist || '');
                 updatePlayerInfo({ id: videoId, title, artist });
-                event.target.loadVideoById(videoId);
+                if (shouldPlay) {
+                    event.target.loadVideoById(videoId);
+                } else if (event.target.cueVideoById) {
+                    event.target.cueVideoById(videoId);
+                } else {
+                    event.target.loadVideoById(videoId);
+                }
                 if (typeof time === 'number') {
                     event.target.seekTo(time, true);
                 }
@@ -1929,6 +1935,8 @@
                         event.target.mute();
                     }
                     event.target.playVideo();
+                } else {
+                    event.target.pauseVideo();
                 }
                 pendingSync = null;
             }
@@ -2120,11 +2128,18 @@
         }
 
         function updateControlAccess() {
-            const controls = [playPauseBtn, prevBtn, nextBtn, repeatBtn, shuffleBtn];
+            const controls = [playPauseBtn, prevBtn, nextBtn];
             controls.forEach(control => {
                 if (!control) return;
                 control.disabled = !isHost;
                 control.classList.toggle('disabled-control', !isHost);
+            });
+
+            const sharedControls = [repeatBtn, shuffleBtn];
+            sharedControls.forEach(control => {
+                if (!control) return;
+                control.disabled = false;
+                control.classList.remove('disabled-control');
             });
 
             if (progressContainer) {
@@ -2284,6 +2299,32 @@
                 }
             });
 
+            syncSocket.on('control-request', (payload) => {
+                if (!isHost || !payload || !payload.action) {
+                    return;
+                }
+
+                if (payload.action === 'toggle-repeat') {
+                    isRepeat = !isRepeat;
+                    if (repeatBtn) {
+                        repeatBtn.classList.toggle('active', isRepeat);
+                    }
+                    emitSyncState();
+                    return;
+                }
+
+                if (payload.action === 'toggle-shuffle') {
+                    isShuffle = !isShuffle;
+                    if (shuffleBtn) {
+                        shuffleBtn.classList.toggle('active', isShuffle);
+                    }
+                    if (isShuffle && currentPlaylist.length > 0) {
+                        shufflePlaylist();
+                    }
+                    emitSyncState();
+                }
+            });
+
             syncSocket.on('previous-chats', (payload) => {
                 if (!payload || !payload.scope) {
                     return;
@@ -2340,6 +2381,13 @@
                 isRepeat,
                 isShuffle
             });
+        }
+
+        function sendControlRequest(action) {
+            if (!syncSocket || !syncSocket.connected) {
+                return;
+            }
+            syncSocket.emit('control-request', { action });
         }
 
         function setupSyncTick() {
@@ -2475,8 +2523,9 @@
                     const match = currentPlaylist.find(video => video.id === state.currentVideoId);
                     const title = match ? match.title : currentVideoTitle;
                     const artist = match ? match.artist : currentVideoArtist;
+                    const needsLoad = currentVideoId !== state.currentVideoId || !player || !isPlayerReady;
 
-                    if (!isYouTubeReady) {
+                    if (!isYouTubeReady || !player || !isPlayerReady) {
                         pendingSync = {
                             videoId: state.currentVideoId,
                             title,
@@ -2485,8 +2534,17 @@
                             shouldPlay: !!state.isPlaying
                         };
                         currentVideoId = state.currentVideoId;
+                        if (isYouTubeReady && !player) {
+                            player = new YT.Player('youtube-embed', {
+                                events: {
+                                    'onReady': onPlayerReady,
+                                    'onStateChange': onPlayerStateChange
+                                },
+                                playerVars: YT_PLAYER_VARS
+                            });
+                        }
                     } else {
-                        if (currentVideoId !== state.currentVideoId) {
+                        if (needsLoad) {
                             playVideo(state.currentVideoId, title || 'Unknown', artist || '', false, true);
                         } else {
                             updatePlayerInfo({ id: state.currentVideoId, title, artist });
@@ -2706,6 +2764,10 @@
 
             // Repeat button
             repeatBtn.addEventListener('click', () => {
+                if (!isHost) {
+                    sendControlRequest('toggle-repeat');
+                    return;
+                }
                 isRepeat = !isRepeat;
                 repeatBtn.classList.toggle('active');
                 emitSyncState();
@@ -2713,6 +2775,10 @@
 
             // Shuffle button
             shuffleBtn.addEventListener('click', () => {
+                if (!isHost) {
+                    sendControlRequest('toggle-shuffle');
+                    return;
+                }
                 isShuffle = !isShuffle;
                 shuffleBtn.classList.toggle('active');
                 if (isShuffle && currentPlaylist.length > 0) {
