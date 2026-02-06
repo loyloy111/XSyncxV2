@@ -2499,6 +2499,9 @@
 
                 if (typeof state.isPlaying === 'boolean') {
                     isPlaying = state.isPlaying;
+                    if (playPauseBtn) {
+                        playPauseBtn.innerHTML = isPlaying ? '<i class="fas fa-pause"></i>' : '<i class="fas fa-play"></i>';
+                    }
                 }
 
                 if (typeof state.isRepeat === 'boolean') {
@@ -2855,7 +2858,8 @@
                 currentVideoIndex = currentPlaylist.length - 1;
             }
 
-            if (playerContent.classList.contains('active')) {
+            const shouldLoadPlayer = playerContent.classList.contains('active') || fromSync;
+            if (shouldLoadPlayer) {
                 if (!player) {
                     player = new YT.Player('youtube-embed', {
                         videoId: currentVideoId,
@@ -2870,13 +2874,17 @@
                 }
             }
 
-            isPlaying = true;
-            playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            if (!fromSync) {
+                isPlaying = true;
+            }
+            playPauseBtn.innerHTML = isPlaying ? '<i class="fas fa-pause"></i>' : '<i class="fas fa-play"></i>';
             populateUpNext();
             fetchVideoDuration(videoId);
 
             if (player && player.playVideo) {
-                player.playVideo();
+                if (!fromSync || isPlaying) {
+                    player.playVideo();
+                }
                 startProgressTimer();
             }
 
