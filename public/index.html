@@ -2302,6 +2302,9 @@
                 updateControlAccess();
                 updateSyncStatus(isHost ? 'You are the host.' : 'Joined as guest. Add songs to queue.');
                 setupSyncTick();
+                if (!isHost && playerContent && !playerContent.classList.contains('active')) {
+                    togglePlayerView();
+                }
             });
 
             syncSocket.on('sync-state', (state) => {
