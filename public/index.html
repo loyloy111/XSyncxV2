@@ -1909,10 +1909,29 @@
             });
         }
 
+        function applyAudioState(target) {
+            if (!target) {
+                return;
+            }
+
+            if (isMuted) {
+                target.mute();
+                return;
+            }
+
+            if (target.unMute) {
+                target.unMute();
+            }
+            if (target.setVolume) {
+                target.setVolume(currentVolume);
+            }
+        }
+
         function onPlayerReady(event) {
             isPlayerReady = true;
             // Set initial volume
             event.target.setVolume(currentVolume);
+            applyAudioState(event.target);
 
             if (pendingSync) {
                 const { videoId, title, artist, time, shouldPlay } = pendingSync;
@@ -1931,9 +1950,7 @@
                     event.target.seekTo(time, true);
                 }
                 if (shouldPlay) {
-                    if (!isHost) {
-                        event.target.mute();
-                    }
+                    applyAudioState(event.target);
                     event.target.playVideo();
                 } else {
                     event.target.pauseVideo();
@@ -1943,9 +1960,7 @@
 
             // If we were playing before showing, start playback
             if (isPlaying) {
-                if (!isHost) {
-                    event.target.mute();
-                }
+                applyAudioState(event.target);
                 event.target.playVideo();
             }
 
@@ -2563,9 +2578,7 @@
 
                 if (typeof state.isPlaying === 'boolean' && player) {
                     if (state.isPlaying) {
-                        if (!isHost) {
-                            player.mute();
-                        }
+                        applyAudioState(player);
                         player.playVideo();
                     } else {
                         player.pauseVideo();
@@ -3311,6 +3324,9 @@
                 populateUpNext();
                 if (isHost) {
                     emitSyncState();
+                    if (!currentVideoId) {
+                        playVideo(videoId, title, artist, false);
+                    }
                 } else {
                     emitQueueAdd(video);
                 }
