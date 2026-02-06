@@ -2027,20 +2027,6 @@
         async function loadChatIdentity() {
             chatDisplayName = 'Anonymous user';
 
-            try {
-                const response = await fetch('/api/me', { credentials: 'include' });
-                if (response.ok) {
-                    const data = await response.json();
-                    const name = (data && (data.name || data.email)) ? String(data.name || data.email).trim() : '';
-                    if (name) {
-                        chatDisplayName = name;
-                        return;
-                    }
-                }
-            } catch (error) {
-                // Ignore and fall back
-            }
-
             const storedName = (localStorage.getItem('chatDisplayName') || '').trim();
             if (storedName) {
                 chatDisplayName = storedName;
@@ -2050,9 +2036,8 @@
                 return;
             }
 
-            chatDisplayName = (getCookie('userEmail') || '').trim() || 'Anonymous user';
             if (chatNameInput) {
-                chatNameInput.value = chatDisplayName === 'Anonymous user' ? '' : chatDisplayName;
+                chatNameInput.value = '';
             }
         }
 
@@ -2268,7 +2253,7 @@
             const socketBaseUrl = getSocketBaseUrl();
             syncSocket = io(socketBaseUrl, {
                 query: { roomId },
-                transports: ['websocket']
+                transports: ['polling', 'websocket']
             });
 
             syncSocket.on('connect', () => {
